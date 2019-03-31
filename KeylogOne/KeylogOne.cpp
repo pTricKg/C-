@@ -10,7 +10,7 @@ void log();
 
 int main()
 {
-	void hide();
+	hide();
 	log();
 	return 0;
 
